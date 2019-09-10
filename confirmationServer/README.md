@@ -1,5 +1,5 @@
-# artregister-server
+# confirmationserver
 
-艺术品项目的服务端
+银行询证函服务端
 
 
