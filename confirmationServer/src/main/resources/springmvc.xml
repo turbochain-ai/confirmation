@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util-4.0.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/cache 
+		http://www.springframework.org/schema/cache/spring-cache-4.0.xsd
+		http://www.springframework.org/schema/mvc  
+     	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+     	http://www.springframework.org/schema/tx
+ 		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		">
+	<context:component-scan
+		base-package="com.confirmation.controller" />
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean
+				class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" />
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/json;charset=utf-8</value>
+						<value>text/html;charset=utf-8</value>
+						<value>text/json;charset=utf-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+
+	<!-- 登录拦截器的配置 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 要拦截的资源 -->
+			<mvc:mapping path="/user/*" />
+			<mvc:mapping path="/comment/*" />
+			<mvc:mapping path="/changeRecord/*" />
+			<mvc:mapping path="/fingerprintdata/*" />
+			<!-- <mvc:mapping path="/artbank/artWorkRegister" /> -->
+			<!-- 放行（不拦截）的资源 -->
+			<mvc:exclude-mapping path="/user/showRegister" />
+			<mvc:exclude-mapping path="/user/register" />
+			<mvc:exclude-mapping path="/user/showLogin" />
+			<mvc:exclude-mapping path="/user/login" />
+			<mvc:exclude-mapping
+				path="/user/showExpertDetail" />
+			<mvc:exclude-mapping path="/user/showExpertList" />
+			<mvc:exclude-mapping path="/user/showAuthorDetail" />
+			<mvc:exclude-mapping path="/user/showAuthorList" />
+			<mvc:exclude-mapping path="/user/queryAllExpert" />
+			<mvc:exclude-mapping path="/user/queryAllAuthor" />
+			<mvc:exclude-mapping
+				path="/user/queryExpertDetailsByExpertId" />
+			<!-- 实例化拦截器类 -->
+			<bean class="com.confirmation.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<!--重要！配置swagger资源不被拦截 -->
+	<mvc:resources mapping="/swagger-ui.html"
+		location="classpath:/META-INF/resources/" />
+	<mvc:resources mapping="/webjars/**"
+		location="classpath:/META-INF/resources/webjars/" />
+	<mvc:resources mapping="/image/**" location="/image/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/html/**" location="/html/" />
+	<mvc:resources mapping="/assets/**" location="/assets/" />
+	<mvc:resources mapping="/resource/**"
+		location="/resource/" />
+
+	<!-- 国际化资源文件 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<!-- 如果资源文件放在classpath下，basename的value必须有classpath:前缀，否则报错：No message found 
+			under code... -->
+		<property name="basename"
+			value="classpath:i18n/message" />
+		<!-- 如果在国际化资源文件中找不到对应代码的信息，就用这个代码作为名称返回 -->
+		<property name="useCodeAsDefaultMessage" value="true" />
+		<!--<property name="defaultEncoding" value="ISO-8859-1"/> -->
+	</bean>
+	<mvc:interceptors>
+		<!-- 该拦截器通过名为”locale”的参数来拦截HTTP请求，使其重新设置页面的区域化信息 -->
+		<bean
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<!-- 设置请求的参数名为locale -->
+			<property name="paramName" value="locale" />
+		</bean>
+	</mvc:interceptors>
+	<!-- SessionLocaleResolver解析器 -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<!-- 设置session attribute的key -->
+		<property name="localeAttributeName" value="locale" />
+		<!-- 设置默认的Locale -->
+		<property name="defaultLocale" value="zh" />
+	</bean>
+	<!-- 配置视图解析器 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+		<property name="prefix" value="/html/" />
+		<property name="suffix" value=".html" />
+	</bean>
+
+	<!-- 实现上传功能的解析器 1.id="multipartResolver" 2.maxUploadSize：设置上传文件大小 3.defaultEncoding：设置编码格式 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设置上传文件大小，单位 byte 10mb -->
+		<property name="maxUploadSize" value="10000000000"></property>
+		<!-- 设置编码格式 -->
+		<property name="defaultEncoding" value="utf-8"></property>
+	</bean>
+	<!-- <mvc:default-servlet-handler/> -->
+</beans>

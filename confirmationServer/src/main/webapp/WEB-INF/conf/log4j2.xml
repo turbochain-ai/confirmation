@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+	<Properties>
+		<property name="APP_Name" value="IMServer" />
+		<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+		<property name="LOG_HOME" value="${sys:catalina.home}/logs" />
+		<!-- 定义日志的通用格式 -->
+		<property name="genericPattern"
+			value="%d{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%thread|%logger{50}.%method:%L|%msg%n" />
+		<!-- 定义日志分卷文件通用文件名形式 -->
+		<property name="genericFilePattern" value="%d{yyyy-MM-dd}-%i" />
+	</Properties>
+	<!-- 控制台输出 -->
+	<Appenders>
+		<!-- 定义一个console类型定定义 -->
+		<Console name="consoleAppender" target="SYSTEM_OUT">
+			<PatternLayout pattern="${genericPattern}" />
+		</Console>
+		<!-- 定义一个文件appender -->
+		<RollingRandomAccessFile name="rollingRandomAccessFileAppender"
+			fileName="${LOG_HOME}/imserver.log" filePattern="${LOG_HOME}/imserver-${genericFilePattern}.log.zip"
+			append="true">
+			<PatternLayout pattern="${genericPattern}" />
+			<!-- 日志文件大小 -->
+			<SizeBasedTriggeringPolicy size="20MB" />
+			<!-- 最多保留文件数 -->
+			<DefaultRolloverStrategy max="20" />
+		</RollingRandomAccessFile>
+	</Appenders>
+	<loggers>
+		<!-- 日志输出级别 -->
+		<root level="INFO">
+			<appender-ref ref="consoleAppender" />
+			<appender-ref ref="rollingRandomAccessFileAppender" />
+		</root>
+	</loggers>
+</configuration>
