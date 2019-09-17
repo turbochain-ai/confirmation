@@ -36,9 +36,9 @@
 
       <!--下部分的按钮-->
       <div class="content_bottom">
-        <el-button >上一步</el-button>
-        <el-button type="primary" >保存</el-button>
-        <el-button type="primary" >提交</el-button>
+        <el-button class="button">上一步</el-button>
+        <el-button type="primary" class="button" >保存</el-button>
+        <el-button type="primary" class="button">提交</el-button>
       </div>
 
     </div>
@@ -77,7 +77,12 @@
     margin-bottom: 10px;
     border-radius: 3px;
     background-color: #ffffff;
+    padding-top: 3px;
   }
+  .confirm03_steps:hover {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  }
+
   .confirm03_content{
     width: 99%;
     height: 470px;
@@ -85,6 +90,11 @@
     border-radius: 3px;
     background-color: #ffffff;
   }
+
+  .confirm03_content:hover {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  }
+
   .content_top{
     width: 100%;
     height: 50px;
@@ -92,7 +102,7 @@
   .content_middle{
     width: 100%;
     height: 370px;
-   overflow-y:auto;
+    overflow-y:auto;
     overflow-x:auto;
     border-top: 2px solid #f2f2f2;
     border-bottom: 2px solid #f2f2f2;
@@ -103,5 +113,13 @@
     text-align: center;
   }
 
+  .grid-content{
+     margin-top: 5px;
+     margin-left: 20px;
+  }
+  .button{
+    margin-top: 3px;
+    margin-left: 5px;
+  }
 
 </style>

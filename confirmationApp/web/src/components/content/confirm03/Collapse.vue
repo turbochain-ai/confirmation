@@ -1,25 +1,38 @@
 <template>
   <el-collapse accordion>
     <el-collapse-item title="银行存款">
+      <template slot="title">
+       <span class="collapse_title"> 银行存款</span>
+      </template>
       <div><BankDepositTable></BankDepositTable></div>
     </el-collapse-item>
 
     <el-collapse-item title="银行借款">
-      <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
+      <template slot="title">
+        <span class="collapse_title"> 银行借款</span>
+      </template>
+      <div><BankLoanTable></BankLoanTable></div>
     </el-collapse-item>
 
     <el-collapse-item title="注销的账户">
-      <div>简化流程：设计简洁直观的操作流程；</div>
+      <template slot="title">
+        <span class="collapse_title"> 注销的账户</span>
+      </template>
+      <div>注销的账户</div>
     </el-collapse-item>
 
     <el-collapse-item title="本公司作为贷款方的委托贷款">
-      <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>
+      <template slot="title">
+        <span class="collapse_title">本公司作为贷款方的委托贷款</span>
+      </template>
+      <div>本公司作为贷款方的委托贷款</div>
     </el-collapse-item>
   </el-collapse>
 </template>
 
 <script>
   import BankDepositTable from "@/components/content/confirm03/BankDepositTable";
+  import BankLoanTable from "./BankLoanTable";
     export default {
         name: "Collapse",
         data() {
@@ -33,12 +46,17 @@
             }
         },
         components: {
-            BankDepositTable
+            BankDepositTable,
+            BankLoanTable
         }
     }
 
 </script>
 
 <style scoped>
+  .collapse_title{
+    margin-left: 20px;
+    font-weight: bold;
+  }
 
 </style>

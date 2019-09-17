@@ -7,16 +7,15 @@
 
 <script>
 
-  import Confirm01 from "@/views/confirm01/confirm01";
-  import Confirm02 from "@/views/confirm02/confirm02";
-  /*import confirm03 from "@/views/confirm03/confirm031";*/
- import confirm03 from "@/views/confirm03/confirm03";
+  import confirm01 from "@/views/confirm01/confirm01";
+  import confirm02 from "@/views/confirm02/confirm02";
+  import confirm03 from "@/views/confirm03/confirm03";
 
 export default {
   name: 'app',
   components: {
-      Confirm01,
-      Confirm02,
+      confirm01,
+      confirm02,
       confirm03
   }
 }

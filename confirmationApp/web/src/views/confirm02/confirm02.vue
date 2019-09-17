@@ -57,6 +57,7 @@
     margin-bottom: 10px;
     border-radius: 3px;
     background-color: #ffffff;
+    padding-top: 3px;
   }
   .confirm02_content{
     width: 99%;
@@ -80,8 +81,6 @@
     border-top: 2px solid #f2f2f2;
     border-bottom: 2px solid #f2f2f2;
     padding-top: 20px;
-
-
   }
 
   .content_bottom{
