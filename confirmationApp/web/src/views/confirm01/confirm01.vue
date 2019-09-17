@@ -50,6 +50,7 @@
     margin-right: auto;
     margin-bottom: 10px;
     border-radius: 3px;
+    padding-top: 3px;
   }
   .confirm01_content{
     width: 99%;

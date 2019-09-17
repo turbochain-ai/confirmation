@@ -1,19 +1,31 @@
 <template>
   <el-collapse accordion>
     <el-collapse-item title="银行存款">
+      <template slot="title">
+       <span class="collapse_title"> 银行存款</span>
+      </template>
       <div><BankDepositTable></BankDepositTable></div>
     </el-collapse-item>
 
     <el-collapse-item title="银行借款">
+      <template slot="title">
+        <span class="collapse_title"> 银行借款</span>
+      </template>
       <div><BankLoanTable></BankLoanTable></div>
     </el-collapse-item>
 
     <el-collapse-item title="注销的账户">
-      <div>简化流程：设计简洁直观的操作流程；</div>
+      <template slot="title">
+        <span class="collapse_title"> 注销的账户</span>
+      </template>
+      <div>注销的账户</div>
     </el-collapse-item>
 
     <el-collapse-item title="本公司作为贷款方的委托贷款">
-      <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>
+      <template slot="title">
+        <span class="collapse_title">本公司作为贷款方的委托贷款</span>
+      </template>
+      <div>本公司作为贷款方的委托贷款</div>
     </el-collapse-item>
   </el-collapse>
 </template>
@@ -42,5 +54,9 @@
 </script>
 
 <style scoped>
+  .collapse_title{
+    margin-left: 20px;
+    font-weight: bold;
+  }
 
 </style>
