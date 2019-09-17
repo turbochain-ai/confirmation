@@ -29,7 +29,7 @@
         },
         methods: {
             handleChange(val) {
-                console.log(val);
+                //console.log(val);
             }
         },
         components: {

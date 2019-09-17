@@ -1,0 +1,45 @@
+/**********************通用的样式******************************/
+body{
+	font-family: "微软雅黑";
+	color: #000000;
+	
+}
+a:hover{
+	text-decoration: none;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+
+/**********************头部的样式header******************************/
+.top-bar {
+	background-color:red ;
+	height: 80px;
+}
+
+
+
+
+
+/**********************内容样式section******************************/
+
+#confirm_content{
+	background-color:green ;
+	height: 450px;
+	
+	
+	
+}
+
+.content_top{
+	background-color: blue;
+	height: 50px;
+}
+.content_middle{
+	background-color: blueviolet;
+	height: 400px;
+}
+
+/**********************底部样式footer******************************/

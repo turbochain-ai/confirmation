@@ -1,0 +1,106 @@
+/*通用的样式*/
+body,
+ul {
+	font-family: "微软雅黑";
+	color: #000000;
+	margin: 0;
+	padding: 0
+}
+
+.active {
+	background-color: #FFFFFF;
+}
+
+.nav-tabs>li>a {
+	margin: 0 auto;
+	border: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+
+/* 导航栏样式*/
+
+.nav {
+	width: 220px;
+	height: 100%;
+	background: #F2F2F2;
+	transition: all .3s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.nav a {
+	display: block;
+	overflow: hidden;
+	padding-left: 20px;
+	line-height: 46px;
+	max-height: 46px;
+	color: #000000;
+	transition: all .3s;
+}
+
+.nav a span {
+	margin-left: 30px;
+}
+
+.nav-item {
+	position: relative;
+}
+
+.nav-item li:hover a {
+	color: #000000;
+	background: #F9F9F9;
+}
+
+/*右侧界面样式*/
+
+.page_main {
+	margin-left: 255px;
+	margin-top: 30px;
+	height: 550px;
+}
+
+.page_top {
+	height: 100px;
+}
+
+.page_middle {
+
+	height: 430px;
+	border-bottom: 1.2px solid #e0e0e0;
+}
+
+
+
+/*按钮的样式*/
+
+.btn_group {
+	width: 80px;
+	height: 32px;
+	color: white;
+	background-color: dodgerblue;
+}
+
+
+/*输入框样式*/
+
+.intput_group {
+	border-radius: 2px;
+}
+
+
+/*表格的头的样式*/
+
+.table_header {
+	background-color: #87CEFA;
+	color: #006DCC;
+}

@@ -1,0 +1,117 @@
+/**********************通用的样式******************************/
+body{
+	font-family: "微软雅黑";
+	color: #000000;
+	
+}
+a:hover{
+	text-decoration: none;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+
+/**********************头部的样式header******************************/
+#confirm_header{
+	height: 100px;
+}
+
+
+
+/******************************进度条*************************************/
+#progressBar{
+    width: 80%;
+    height: 50px;
+    position: relative;
+    margin: 50px 0 0 100px;
+}
+#progressBar div{
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top:50%;
+    left: 0;
+    margin-top:-20px;
+    border:1px solid #ddd;
+   background: #46B8DA;
+}
+#progressBar div span{
+    position: absolute;
+    display: inline-block;
+    background: #337AB7;
+    height: 1px;
+    width: 100%;
+}
+#progressBar>span{
+    position: absolute;
+    top:0;
+    margin-top: -10px;
+    width: 40px;
+    height: 40px;
+    border:2px solid #ddd;
+    border-radius: 50%;
+    background: #337AB7;
+    margin-left: -20px;
+   background: #337AB7;
+}
+#progressBar>span:nth-child(1){
+    left: 0%;
+}
+/*#progressBar>span:nth-child(2){
+    left: 25%;
+    background: #46B8DA;
+}*/
+#progressBar>span:nth-child(2){
+    left: 50%;
+   background: #337AB7;
+}
+/*#progressBar>span:nth-child(4){
+    left: 75%;
+   background: #46B8DA;
+}*/
+#progressBar>span:nth-child(3){
+    left: 100%;
+    background: #337AB7;
+}
+
+
+
+/**********************内容样式content******************************/
+
+.content_top{
+	/*background-color: #1B6D85;*/
+	height: 80px;
+}
+
+.content_middle{
+	/*background-color:green;*/
+	height: 400px;
+	width:100%;
+
+	overflow-x:auto;
+	overflow-y:auto
+	
+}
+
+.content_bottom{
+	border: 1.2px solid #F2F2F2;
+	height: 50px;
+	padding: 10px;
+	
+}
+
+
+.panel-body{
+	overflow-x:auto;
+}
+.button_div{
+	margin-left: 40%;
+}
+
+
+
+	
+
+/**********************底部样式footer******************************/

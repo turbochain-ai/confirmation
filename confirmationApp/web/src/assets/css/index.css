@@ -1,0 +1,158 @@
+/**********************通用的样式******************************/
+
+body {
+	font-family: "微软雅黑";
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+
+/**********************头部的样式header******************************/
+
+#confirm_header .top-bar {
+	height: 100px;
+	line-height: 99px;
+	border-bottom: 1.2px solid #e0e0e0;
+}
+
+.header p {
+	padding: 0px;
+	display: inline-block;
+}
+
+.user_head {
+	position: relative;
+	top: 10px;
+}
+
+.container .user_name {
+	padding: 0px;
+}
+
+.container {
+	position: relative;
+}
+
+.header_right {
+	float: right;
+	vertical-align: middle;
+	position: absolute;
+	top: 12px;
+	right: 16px;
+}
+
+.row {
+	padding: 24px;
+	height: 74px;
+	/*margin-top: 10px;
+	margin-bottom: 20px;*/
+}
+
+
+/*
+#confirm_header .top-bar .logo{
+	
+	height: 70px;
+	
+	
+}
+
+#confirm_header .top-bar .info{
+
+	height: 50px;
+	
+	
+}
+#confirm_header .top-bar .score{
+	border-left: 2px solid #e0e0e0;
+	height: 50px;
+	
+	
+}
+
+.top_info{
+	padding: 10px 10px;
+	height: 100px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+}*/
+
+
+/**********************内容样式section******************************/
+
+#confirm_content {
+	/*height: 500px;
+	line-height: 499px;
+	border-bottom: 1px solid #e0e0e0;*/
+	background-color: #f2f2f2;
+}
+
+.main_box {
+	margin: 24px;
+}
+
+.main_list {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 18px;
+}
+
+.main_title {
+	font-weight: bold;
+}
+
+.main_count {
+	font-size: 2.5em;
+	margin-left: 130px;
+	color: orange;
+}
+
+.main_unit {
+	color: #ADADAD;
+}
+
+.header {}
+
+.head {}
+
+.detail {
+	width: 90%;
+	display: inline-block;
+	line-height: 32px;
+	text-align: right;
+	margin-left: 5%;
+	border-top: 1px dashed #e0e0e0;
+}
+
+.thumbnail img,
+.thumbnail a>img {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.thumbnail {
+	border: none;
+	color: #333333;
+}
+
+.thumbnail:hover {
+	color: #ff9900;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.line {
+	border: 1.2px solid #e0e0e0;
+	border-style: dashed;
+}
+
+
+/**********************底部样式footer******************************/

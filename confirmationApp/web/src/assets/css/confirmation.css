@@ -1,0 +1,40 @@
+/**********************通用的样式******************************/
+
+body {
+	font-family: "微软雅黑";
+	color: #000000;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+
+/**********************头部的样式header******************************/
+
+
+/**********************内容样式section******************************/
+
+.row {
+	margin-top: 40px;
+}
+
+.thumbnail {
+	display: block;
+	color: #333333;
+	border: none;
+	height: 110px;
+	text-decoration: none;
+}
+
+.thumbnail:hover {
+	color: #ff9900;
+}
+
+.caption {
+	text-align: center;
+}
+
+
+/**********************底部样式footer******************************/
