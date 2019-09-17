@@ -4,7 +4,7 @@
       <template slot="title">
        <span class="collapse_title"> 银行存款</span>
       </template>
-      <div><BankDepositTable></BankDepositTable></div>
+      <div><DepositTable></DepositTable></div>
     </el-collapse-item>
 
     <el-collapse-item title="银行借款">
@@ -18,7 +18,7 @@
       <template slot="title">
         <span class="collapse_title"> 注销的账户</span>
       </template>
-      <div>注销的账户</div>
+      <div><CloseAccountTable></CloseAccountTable></div>
     </el-collapse-item>
 
     <el-collapse-item title="本公司作为贷款方的委托贷款">
@@ -31,8 +31,10 @@
 </template>
 
 <script>
-  import BankDepositTable from "@/components/content/confirm03/BankDepositTable";
+  import DepositTable from "@/components/content/confirm03/DepositTable";
   import BankLoanTable from "./BankLoanTable";
+  import CloseAccountTable from "./CloseAccountTable";
+  import BankDepositTable from "./DepositTable";
     export default {
         name: "Collapse",
         data() {
@@ -47,7 +49,9 @@
         },
         components: {
             BankDepositTable,
-            BankLoanTable
+            DepositTable,
+            BankLoanTable,
+            CloseAccountTable
         }
     }
 

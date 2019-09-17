@@ -1,80 +1,80 @@
 <template>
-  <el-table :data="tableData" class="tb-edit" style="width: 100%" highlight-current-row @row-click="handleCurrentChange">
-
-    <el-table-column label="日期" width="180">
-      <template scope="scope">
-        <el-input size="small" v-model="scope.row.date" placeholder="请输入内容" @change="handleEdit(scope.$index, scope.row)"></el-input> <span>{{scope.row.date}}</span>
-      </template>
-    </el-table-column>
-
-    <el-table-column label="姓名" width="180">
-      <template scope="scope">
-        <el-input size="small" v-model="scope.row.name" placeholder="请输入内容" @change="handleEdit(scope.$index, scope.row)"></el-input> <span>{{scope.row.name}}</span>
-      </template>
-    </el-table-column>
-
-    <el-table-column prop="address" label="地址">
-      <template scope="scope">
-        <el-input size="small" v-model="scope.row.address" placeholder="请输入内容" @change="handleEdit(scope.$index, scope.row)"></el-input> <span>{{scope.row.address}}</span>
-      </template>
-    </el-table-column>
-
-    <el-table-column label="操作">
-      <template scope="scope">
-        <!--<el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>-->
-        <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-      </template>
-    </el-table-column>
-
-  </el-table>
- <!-- <br>数据:{{tableData}}-->
+  <div>
+    <div style="margin: 10px">
+      <el-button type="primary" @click="insertEvent">添加新行</el-button>
+      <el-button type="danger" @click="removeSelected">删除选中</el-button>
+    </div>
+    <vxe-table ref="xTable" :data="tableData" :edit-config="{trigger: 'dblclick', mode: 'cell'}">
+      <vxe-table-column type="selection" width="60"></vxe-table-column>
+      <vxe-table-column type="index" width="60"></vxe-table-column>
+      <vxe-table-column field="borrower" title="借款人" :edit-render="{name: 'input'}" width="150"></vxe-table-column>
+      <vxe-table-column field="bank" title="银行" :edit-render="{name: 'input'}" width="150"></vxe-table-column>
+      <vxe-table-column field="currencyType" title="币种" :edit-render="{name: 'input'}" width="150"></vxe-table-column>
+      <vxe-table-column field="balance" title="余额" :edit-render="{name: 'input'}" width="150"></vxe-table-column>
+      <vxe-table-column field="fund" title="借款" :edit-render="{name: 'input'}" width="150"></vxe-table-column>
+      <vxe-table-column field="date" title="到期" :edit-render="{name: 'input'}" width="150"></vxe-table-column>
+      <vxe-table-column field="interestRates" title="利率" :edit-render="{name: 'input'}" width="150"></vxe-table-column>
+      <vxe-table-column field="pledge" title="抵（质）押品" :edit-render="{name: 'input'}" width="250"></vxe-table-column>
+      <vxe-table-column field="note" title="备注" :edit-render="{name: 'input'}" width="250"></vxe-table-column>
+      <!--<vxe-table-column field="operate" title="操作"  width="150">
+        <el-button type="danger" @click="removeRow">删除</el-button>
+      </vxe-table-column>-->
+    </vxe-table>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "BankLoanTable",
-        data: {
-            tableData: [{
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1517 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1519 弄'
-            }, {
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1516 弄'
-            }]
-        },
-        methods: {
-            handleCurrentChange(row, event, column) {
-                console.log(row, event, column, event.currentTarget)
-            },
-            handleEdit(index, row) {
-                console.log(index, row);
-            },
-            handleDelete(index, row) {
-                console.log(index, row);
-            }
+  export default {
+    name: "BankLoanTable",
+    data () {
+      return {
+        tableData: []
+      }
+    },
+    created () {
+      this.tableData.push({
+        accountName:"zhangsan",
+        bankAccount:"male",
+        currencyType:"33",
+        interestRates:"zhangsan",
+        accountType:"male",
+        balance:"33",
+        startAndEndDate:"zhangsan",
+        limit:"male",
+        note:"33",
+      },{
+        accountName:"zhangsan",
+        bankAccount:"male",
+        currencyType:"33",
+        interestRates:"zhangsan",
+        accountType:"male",
+        balance:"33",
+        startAndEndDate:"zhangsan",
+        limit:"male",
+        note:"33",
+      });
+    },
+    methods: {
+      insertEvent () {
+        let row = -1;
+        let record = {
+          accountName: '1'
         }
+        this.$refs.xTable.insertAt(record, row).then(({ row }) => this.$refs.xTable.setActiveCell(row, 'accountName'));
+      },
+      removeSelected() {
+        this.$refs.xTable.removeSelecteds();
+      },
+      /*editActivedEvent({row, column}, event) {
+        console.log(`打开 ${column.title} 列编辑`)
+      },
+      editClosedEvent({row, column}, event) {
+        console.log(`关闭 ${column.title} 列编辑`)
+      }*/
     }
+  }
 </script>
 
 <style scoped>
-  .tb-edit .el-input {
-    display: none
-  }
-  .tb-edit .current-row .el-input {
-    display: block
-  }
-  .tb-edit .current-row .el-input+span {
-    display: none
-  }
 
 </style>
