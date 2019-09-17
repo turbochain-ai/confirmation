@@ -5,7 +5,7 @@
     </el-collapse-item>
 
     <el-collapse-item title="银行借款">
-      <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
+      <div><BankLoanTable></BankLoanTable></div>
     </el-collapse-item>
 
     <el-collapse-item title="注销的账户">
@@ -20,6 +20,7 @@
 
 <script>
   import BankDepositTable from "@/components/content/confirm03/BankDepositTable";
+  import BankLoanTable from "./BankLoanTable";
     export default {
         name: "Collapse",
         data() {
@@ -33,7 +34,8 @@
             }
         },
         components: {
-            BankDepositTable
+            BankDepositTable,
+            BankLoanTable
         }
     }
 
