@@ -33,8 +33,8 @@ Vue.use(ElementUI);
 // Vue.prototype.host = "http://10.20.31.178"; //测试
 // Vue.prototype.host = "http://ipex.openserver.cn";
 //Vue.prototype.host = "http://127.0.0.1:6001";
-Vue.prototype.host = "https://ipex.openserver.cn";
-//Vue.prototype.host = "http://127.0.0.1:80";
+// Vue.prototype.host = "https://ipex.openserver.cn";
+Vue.prototype.host = "http://127.0.0.1:80";
 
 Vue.prototype.api = Api;
 Vue.http.options.credentials = true;

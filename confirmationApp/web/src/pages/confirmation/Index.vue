@@ -1,13 +1,21 @@
+<style scoped lang="scss">
+  @import url(../../assets/bootstrap/css/bootstrap.css);
+  @import url(../../assets/css/confirmation.css);
+</style>
+
+
 <template>
    <!---------------------内容content--------------------->
 		<section id="confirm_content">
 			<div class="container">
 				<div class="row">
 
+          <router-link :to="{path: '/confirm01'}">
 					<a href="#" class="col-sm-6 col-md-3 thumbnail">
 						<img src="@/assets/img/confirm/02区块链银行函证系统-函证_03.png" alt="通用">
-						<p class="caption">通用</p>
+              <p class="caption">通用</p>
 					</a>
+          </router-link>
 
 					<div class="col-sm-6 col-md-3">
 						<a href="#" class="thumbnail" style="border: none;">
@@ -138,4 +146,5 @@
 			</div>
 		</section>
 </template>
- 
+
+

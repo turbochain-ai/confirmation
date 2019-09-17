@@ -36,7 +36,11 @@
 
       <!--下部分的按钮-->
       <div class="content_bottom">
-        <el-button >上一步</el-button>
+
+        <router-link :to="{path: '/confirm02'}">
+          <el-button >上一步</el-button>
+        </router-link>
+
         <el-button type="primary" >保存</el-button>
         <el-button type="primary" >提交</el-button>
       </div>
@@ -50,7 +54,7 @@
    import AuditYear from "@/components/content/confirm03/AuditYear";
    import DataTimeComponent from "@/components/content/confirm03/DataTimeComponent";
    import Collapse from "@/components/content/confirm03/Collapse";
-    
+
     export default {
         name: "confirm03",
         components: {

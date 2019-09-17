@@ -16,9 +16,15 @@
 
       <!--下部分的按钮-->
       <div class="content_bottom">
+
+        <router-link :to="{path: '/confirmation'}">
+          <el-button >上一步</el-button>
+        </router-link>
+
         <router-link :to="{path: '/confirm02'}">
           <el-button type="primary" >下一步</el-button>
         </router-link>
+
       </div>
     </div>
   </div>
