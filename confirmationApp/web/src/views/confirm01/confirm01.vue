@@ -27,7 +27,7 @@
 
 <script>
   import Steps01 from "@/components/content/confirm01/Steps01";
-  import RadioCompany from "@/views/confirm01/RadioCompany";
+  import RadioCompany from "@/components/content/confirm01/RadioCompany";
     export default {
         name: "confirm01",
         components: {

@@ -31,7 +31,7 @@
   import Steps02 from "@/components/content/confirm02/Steps02";
   import Search from "@/components/content/confirm02/Search";
   import Bank from "@/components/content/confirm02/Bank";
-  import RadioCompany from "@/views/confirm01/RadioCompany";
+  import RadioCompany from "@/components/content/confirm01/RadioCompany";
     export default {
         name: "confirm02",
         components: {
