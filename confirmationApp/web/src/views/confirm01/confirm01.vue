@@ -12,7 +12,9 @@
     <div class="confirm01_content">
 
       <!--上部分公司选择-->
-      <div class="content_top">上部分公司选择</div>
+      <div class="content_top">
+        <RadioCompany></RadioCompany>
+      </div>
 
       <!--下部分的按钮-->
       <div class="content_bottom">
@@ -25,10 +27,12 @@
 
 <script>
   import Steps01 from "@/components/content/confirm01/Steps01";
+  import RadioCompany from "@/views/confirm01/RadioCompany";
     export default {
         name: "confirm01",
         components: {
-            Steps01
+            Steps01,
+            RadioCompany
         }
 
     }
