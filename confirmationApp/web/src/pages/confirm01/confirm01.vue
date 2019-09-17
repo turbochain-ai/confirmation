@@ -12,30 +12,31 @@
     <div class="confirm01_content">
 
       <!--上部分公司选择-->
-      <div class="content_top">上部分公司选择</div>
+      <div class="content_top">
+        <RadioCompany></RadioCompany>
+      </div>
 
       <!--下部分的按钮-->
-      <div class="content_bottom">
+      <router-link :to="{path: '/confirmation'}">
+        <el-button >上一步</el-button>
+      </router-link>
 
-        <router-link :to="{path: '/confirmation'}">
-          <el-button >上一步</el-button>
-        </router-link>
+      <router-link :to="{path: '/confirm02'}">
+        <el-button type="primary" >下一步</el-button>
+      </router-link>
 
-        <router-link :to="{path: '/confirm02'}">
-          <el-button type="primary" >下一步</el-button>
-        </router-link>
-
-      </div>
     </div>
   </div>
 </template>
 
 <script>
   import Steps01 from "@/components/content/confirm01/Steps01";
+  import RadioCompany from "../../components/content/confirm01/RadioCompany";
     export default {
         name: "confirm01",
         components: {
-            Steps01
+            Steps01,
+            RadioCompany
         }
 
     }

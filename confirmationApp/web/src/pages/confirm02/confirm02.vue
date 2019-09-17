@@ -14,7 +14,7 @@
      <div class="content_top"><Search></Search></div>
       <!--上部分银行选择-->
       <div class="content_middle">
-        <Bank></Bank>
+        <radio-company></radio-company>
       </div>
 
       <!--下部分的按钮-->
@@ -28,6 +28,7 @@
         </router-link>
       </div>
 
+
     </div>
   </div>
 </template>
@@ -36,12 +37,14 @@
   import Steps02 from "@/components/content/confirm02/Steps02";
   import Search from "@/components/content/confirm02/Search";
   import Bank from "@/components/content/confirm02/Bank";
+  import RadioCompany from "../../components/content/confirm01/RadioCompany";
     export default {
         name: "confirm02",
         components: {
             Steps02,
             Search,
-            Bank
+            Bank,
+            RadioCompany
         }
     }
 </script>
