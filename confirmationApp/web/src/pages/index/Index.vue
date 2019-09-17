@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!---------------------内容content--------------------->
 		<section id="confirm_content">
 			<div class="container">
@@ -38,7 +38,7 @@
 								<span class="main_count">--</span><span class="main_unit">份</span>
 							</div>
 							<span class="detail">
-							  <router-link :to="{path: '/notice/index'}">查看明细></router-link>
+							  <router-link :to="{path: '/confirm01'}">查看明细></router-link>
 							</span>
 						</a>
 					</div>
