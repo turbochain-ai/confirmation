@@ -11,6 +11,8 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.support.RequestContext;
 
+import com.confirmation.exception.ResultCode;
+
 public class ResponseObject {
 
     String code;

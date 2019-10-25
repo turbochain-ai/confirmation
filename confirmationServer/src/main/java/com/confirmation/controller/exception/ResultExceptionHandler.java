@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.confirmation.controller.response.ResponseObject;
-import com.confirmation.controller.response.ResultCode;
+import com.confirmation.exception.ResultCode;
+import com.confirmation.exception.ResultException;
 
 @ControllerAdvice
 public class ResultExceptionHandler {

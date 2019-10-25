@@ -1,4 +1,4 @@
-package com.confirmation.controller.response;
+package com.confirmation.exception;
 
 
 

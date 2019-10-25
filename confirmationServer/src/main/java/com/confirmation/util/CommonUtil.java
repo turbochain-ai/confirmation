@@ -60,15 +60,28 @@ public class CommonUtil
 	 */
 	public static byte[] hexStringToByte(String hex)
 	{
-		int len = (hex.length() / 2);
-		byte[] result = new byte[len];
-		char[] achar = hex.toCharArray();
-		for(int i = 0; i < len; i++)
-		{
-			int pos = i * 2;
-			result[i] = (byte) (toByte(achar[pos]) << 4 | toByte(achar[pos + 1]));
-		}
-		return result;
+//	    hex = hex.toUpperCase();
+//		int len = (hex.length() / 2);
+//		byte[] result = new byte[len];
+//		char[] achar = hex.toCharArray();
+//		for(int i = 0; i < len; i++)
+//		{
+//			int pos = i * 2;
+//			result[i] = (byte) (toByte(achar[pos]) << 4 | toByte(achar[pos + 1]));
+//		}
+//		return result;
+	    
+	    if (hex.length() % 2 != 0) {  
+            throw new IllegalArgumentException();  
+        }  
+        char[] arr = hex.toCharArray();  
+        byte[] b = new byte[hex.length() / 2];  
+        for (int i = 0, j = 0, l = hex.length(); i < l; i++, j++) {  
+            String swap = "" + arr[i++] + arr[i];  
+            int byteint = Integer.parseInt(swap, 16) & 0xFF;  
+            b[j] = new Integer(byteint).byteValue();  
+        }  
+        return b; 
 	}
 
 	private static int toByte(char c)
