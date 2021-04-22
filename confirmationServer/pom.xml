@@ -39,7 +39,7 @@
 
 		<!-- 数据层 -->
 		<mysql_connect_version>8.0.13</mysql_connect_version>
-		<mybatis_version>3.2.8</mybatis_version>
+		<mybatis_version>3.5.6</mybatis_version>
 		<mybatis_spring_version>1.2.2</mybatis_spring_version>
 		<druid_version>1.1.10</druid_version>
 		<!-- AspectJ -->
