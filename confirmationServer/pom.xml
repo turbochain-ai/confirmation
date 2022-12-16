@@ -22,7 +22,7 @@
 
 		<im_version>1.0.1-SNAPSHOT</im_version>
 
-		<spring_version>4.3.22.RELEASE</spring_version>
+		<spring_version>5.2.20.RELEASE</spring_version>
 		<rocketmq_version>4.3.2</rocketmq_version>
 		<junit_version>4.11</junit_version>
 
